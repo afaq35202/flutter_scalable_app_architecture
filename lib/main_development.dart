@@ -1,3 +1,4 @@
+import 'package:dobby/core/env/environment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,5 +8,7 @@ import 'main.dart';
 /// Launch with `flutter run --target lib/main_development.dart`.
 /// Uses local data.
 void main() {
-  runApp(ProviderScope(child: const MainApp()));
+  runApp(ProviderScope(
+      overrides: getEnvOverrides(),
+      child: const MainApp()));
 }

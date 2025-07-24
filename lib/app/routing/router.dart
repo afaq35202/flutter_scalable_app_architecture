@@ -1,11 +1,9 @@
 import 'package:dobby/app/routing/routes.dart';
 import 'package:dobby/features/app_initializer/presentation/app_initializer_page.dart';
-import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/app_initializer/presentation/view_model/app_initializer_view_model.dart';
-import '../../features/home/presentation/viewmodel/home_viewmodel.dart';
 
 GoRouter router() => GoRouter(
   initialLocation: Routes.appInitializer,
@@ -23,13 +21,7 @@ GoRouter router() => GoRouter(
     // ),
     GoRoute(
       path: Routes.appInitializer,
-      builder: (context, state) {
-        final viewModel = AppInitializerViewModel(
-          // bookingRepository: context.read(),
-          // userRepository: context.read(),
-        );
-        return AppInitializerPage(viewModel: viewModel);
-      },
+      builder: (context, state) => AppInitializerPage(),
       routes: [
         // GoRoute(
         //   path: Routes.searchRelative,

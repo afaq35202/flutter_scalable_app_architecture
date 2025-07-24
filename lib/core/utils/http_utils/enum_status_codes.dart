@@ -6,5 +6,6 @@ enum HttpStatusCode {
   internalServerError(500);
 
   final int code;
+
   const HttpStatusCode(this.code);
 }

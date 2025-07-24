@@ -1,0 +1,20 @@
+{
+  "message": {
+    "info": "Info",
+    "welcome_to": "Welcome To",
+    "yellowbeard": "Hermelin Coffee Pro",
+    "register": "Register",
+    "login": "Login",
+    "hi_there": "Hi there!",
+    "login_to": "Login to ",
+    "register_to": "Register to ",
+    "enter_info": "Enter your information Below",
+    "email": "Email",
+    "password": "Password",
+    "create_account": "Create Account",
+    "forgot_password": "Forgot Password?",
+    "forgot_password_title": "Forgot Password",
+    "no_account": "Don't have an account?",
+    "forgot_your": "Forgot Your "
+  }
+}

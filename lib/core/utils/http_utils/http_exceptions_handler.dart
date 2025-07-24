@@ -7,24 +7,27 @@ import 'api_response.dart';
 ApiResponse<T> handleException<T>(Object error, {int? statusCode}) {
   if (error is DioException) {
     return ApiResponse.failure(
-      _mapDioError(error),
+      message: _mapDioError(error),
       statusCode: error.response?.statusCode,
     );
   } else if (error is SocketException) {
     return ApiResponse.failure(
-      'No Internet connection',
+      message: 'No Internet connection',
       statusCode: statusCode,
     );
   } else if (error is HttpException) {
-    return ApiResponse.failure('HTTP error occurred', statusCode: statusCode);
+    return ApiResponse.failure(
+      message: 'HTTP error occurred',
+      statusCode: statusCode,
+    );
   } else if (error is FormatException) {
     return ApiResponse.failure(
-      'Invalid response format',
+      message: 'Invalid response format',
       statusCode: statusCode,
     );
   } else {
     return ApiResponse.failure(
-      'Unexpected error: $error',
+      message: 'Unexpected error: $error',
       statusCode: statusCode,
     );
   }

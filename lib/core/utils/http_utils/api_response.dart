@@ -1,3 +1,5 @@
+import '../../constants/http_constants.dart';
+
 class ApiResponse<T> {
   final T? data;
   final String? message;
@@ -12,19 +14,29 @@ class ApiResponse<T> {
   });
 
   factory ApiResponse.success(T data, {int? statusCode}) {
-    return ApiResponse(
-      data: data,
-      success: true,
-      statusCode: statusCode,
-    );
+    return ApiResponse(data: data, success: true, statusCode: statusCode);
   }
 
-  factory ApiResponse.failure(String message, {int? statusCode}) {
+  factory ApiResponse.failure({String? message, int? statusCode}) {
     return ApiResponse(
       data: null,
-      message: message,
+      message: message ?? HttpConstants.somethingWentWrong,
       success: false,
       statusCode: statusCode,
     );
   }
+  ApiResponse<R> map<R>(R Function(T data) transform) {
+    if (success && data != null) {
+      return ApiResponse.success(
+        transform(data as T),
+        statusCode: statusCode,
+      );
+    } else {
+      return ApiResponse.failure(
+        message: message,
+        statusCode: statusCode,
+      );
+    }
+  }
+
 }

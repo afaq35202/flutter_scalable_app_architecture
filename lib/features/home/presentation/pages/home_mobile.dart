@@ -10,6 +10,6 @@ class HomeMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ReusableScaffold(appBar: ReusableAppBar(), body: ReusableBody());
+    return ReusableScaffold(appBar: ReusableAppBar(),);
   }
 }

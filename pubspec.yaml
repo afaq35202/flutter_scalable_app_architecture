@@ -48,10 +48,6 @@ dependencies:
   #apis calling
   dio: ^5.8.0+1
 
-  #generate models
-  freezed_annotation: ^3.1.0
-  json_annotation: ^4.9.0
-
 
 dev_dependencies:
   flutter_test:
@@ -63,10 +59,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
-  #generate models
-  build_runner: ^2.6.0
-  freezed: ^3.2.0
-  json_serializable: ^6.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -80,8 +72,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
+    - assets/mock/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
