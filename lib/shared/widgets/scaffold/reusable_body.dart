@@ -7,6 +7,8 @@ class ReusableBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return child;
+    return SizedBox(
+        width: double.infinity,
+        child: child);
   }
 }

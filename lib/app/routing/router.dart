@@ -1,40 +1,22 @@
 import 'package:dobby/app/routing/routes.dart';
 import 'package:dobby/features/app_initializer/presentation/app_initializer_page.dart';
+import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'navigation_oberver.dart';
 
-GoRouter router() => GoRouter(
+final router = GoRouter(
   initialLocation: Routes.appInitializer,
   debugLogDiagnostics: true,
   redirect: _redirect,
-  // refreshListenable: authRepository,
+  observers: [LoggingObserver()],
   routes: [
-    // GoRoute(
-    //   path: Routes.login,
-    //   builder: (context, state) {
-    //     return LoginScreen(
-    //       viewModel: LoginViewModel(authRepository: context.read()),
-    //     );
-    //   },
-    // ),
     GoRoute(
       path: Routes.appInitializer,
-      builder: (context, state) => AppInitializerPage(),
-      routes: [
-        // GoRoute(
-        //   path: Routes.searchRelative,
-        //   builder: (context, state) {
-        //     final viewModel = SearchFormViewModel(
-        //       continentRepository: context.read(),
-        //       itineraryConfigRepository: context.read(),
-        //     );
-        //     return SearchFormScreen(viewModel: viewModel);
-        //   },
-        // ),
-      ],
+      builder: (context, state) => const AppInitializerPage(),
     ),
+    GoRoute(path: Routes.home, builder: (context, state) => const HomePage()),
   ],
 );
 

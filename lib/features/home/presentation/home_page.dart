@@ -3,17 +3,31 @@ import 'package:dobby/features/home/presentation/viewmodel/home_viewmodel.dart';
 import 'package:dobby/shared/widgets/reusable_responsive.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  final HomeViewModel viewModel;
+import '../../../app/routing/routes.dart';
 
-  const HomePage({super.key, required this.viewModel});
+class HomePage extends StatefulWidget {
+
+  const HomePage({super.key});
+
+  static const routeName = Routes.home;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    print("here is home");
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return ReusableResponsive(
-      mobile: HomeMobile(viewModel: viewModel),
-      tablet: HomeMobile(viewModel: viewModel),
-      desktop: HomeMobile(viewModel: viewModel),
+      mobile: HomeMobile(),
+      tablet: HomeMobile(),
+      desktop: HomeMobile(),
     );
   }
 }

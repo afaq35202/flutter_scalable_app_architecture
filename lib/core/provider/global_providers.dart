@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/features/translations/domain/entities/translation_entity.dart';
 import '../services/dio_client.dart';
 
+
 final dioClientProvider = Provider<ApiClient>((ref) {
   return DioClient(); // default production client
 });

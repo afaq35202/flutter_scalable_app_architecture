@@ -1,37 +1,58 @@
 import 'package:dobby/core/extensions/string_extensions.dart';
+import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:dobby/shared/widgets/scaffold/export_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../shared/widgets/reusable_linear_progress_loader.dart';
 import '../view_model/app_initializer_provider.dart';
 
-class AppInitializerMobile extends ConsumerWidget {
+class AppInitializerMobile extends ConsumerStatefulWidget {
   const AppInitializerMobile({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  ConsumerState<AppInitializerMobile> createState() =>
+      _AppInitializerMobileState();
+}
+
+class _AppInitializerMobileState extends ConsumerState<AppInitializerMobile> {
+  late final ProviderSubscription _subscription;
+  bool _navigated = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Listen manually (this is the correct way in initState)
+    _subscription = ref.listenManual<AsyncValue<void>>(appInitializerProvider, (
+      prev,
+      next,
+    ) {
+      next.whenOrNull(
+        data: (_) {
+          if (_navigated) return; // 🔒 already navigated
+          _navigated = true;
+          Future.microtask(() {
+            if (!mounted) return;
+            context.go(HomePage.routeName);
+          });
+        },
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    _subscription.close();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return ReusableScaffold(
-      body: ReusableBody(
-        child: Column(
-          children: [
-            Spacer(flex: 2),
-            Center(child: ReusableLinearProgressLoader(height: 10, width: 100)),
-            ElevatedButton(onPressed: (){
-              ref.read(appInitializerProvider.notifier).fetchItems();
-            }, child: Text("Change translations")),
-            Consumer(
-              builder: (context, ref, _) {
-                final reference = ref.watch(appInitializerProvider);
-                return reference.isLoading
-                    ? CircularProgressIndicator()
-                    : Text("info".tr(ref));
-              },
-            ),
-            Spacer(),
-          ],
-        ),
-      ),
+      body: ReusableBody(child: ReusableLinearProgressLoader()),
     );
   }
 }
