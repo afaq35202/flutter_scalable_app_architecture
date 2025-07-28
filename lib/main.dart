@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app/app_factory.dart';
 import 'app/routing/router.dart';
-import 'app/theming/theme/theme.dart';
+import 'app/theming/theme/theming.dart';
 import 'l10n/app_localizations.dart';
 import 'main_development.dart' as development;
 
