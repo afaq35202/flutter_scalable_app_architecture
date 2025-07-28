@@ -8,7 +8,7 @@ class GetTranslationsUseCase {
 
   GetTranslationsUseCase(this._translationsRepository);
 
-  Future<ApiResponse<TranslationEntity>> call() {
-    return _translationsRepository.getTranslations();
+  Future<ApiResponse<TranslationEntity>> call(String languageCode) {
+    return _translationsRepository.getTranslations(languageCode);
   }
 }

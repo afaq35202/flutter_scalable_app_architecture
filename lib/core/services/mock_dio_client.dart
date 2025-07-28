@@ -22,7 +22,7 @@ class MockDioClient extends ApiClient {
     required T Function(dynamic json) parser,
   }) async {
     try{
-      final json = await _loadJsonAsset("${Assets.mockResponse}${path.getEndPointOfPath}.json");
+      final json = await _loadJsonAsset("${Assets.mockResponse}$path.json");
       _logger.logInfo(functionName: "request", message: json.toString());
       final parsed = parser(json);
       return ApiResponse.success(parsed, statusCode: 200);

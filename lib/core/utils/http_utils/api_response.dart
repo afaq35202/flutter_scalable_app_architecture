@@ -38,4 +38,14 @@ class ApiResponse<T> extends Response<T> {
       return ApiResponse.failure(message: message, statusCode: statusCode);
     }
   }
+  factory ApiResponse.fromDioResponse(Response<T> response, {String? message}) {
+    return ApiResponse<T>(
+      data: response.data,
+      requestOptions: response.requestOptions,
+      statusCode: response.statusCode,
+      message: message,
+      success: response.statusCode != null && response.statusCode! >= 200 && response.statusCode! < 300,
+    );
+  }
+
 }

@@ -26,8 +26,7 @@ class AppInitializerViewModel extends StateNotifier<AsyncValue<void>> {
   }
   Future<void> _fetchTranslations() async {
     try {
-      final response = await getTranslationsUseCase.call();
-      await Future.delayed(Duration(seconds: 5));
+      final response = await getTranslationsUseCase.call("en");
       if (response.success) {
         ref.read(remoteTranslationsProvider.notifier).state =
             response.data ?? TranslationEntity.initial();

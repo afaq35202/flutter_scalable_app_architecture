@@ -11,8 +11,8 @@ class TranslationsRepositoryImp extends TranslationsRepository{
   TranslationsRepositoryImp(this._translationsService);
 
   @override
-  Future<ApiResponse<TranslationEntity>> getTranslations() {
-    return _translationsService.getTranslations();
+  Future<ApiResponse<TranslationEntity>> getTranslations(String languageCode) {
+    return _translationsService.getTranslations(languageCode);
   }
 
 }

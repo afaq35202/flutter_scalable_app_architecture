@@ -1,7 +1,6 @@
 import 'package:dobby/core/provider/global_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 import '../../../../shared/features/translations/data/services/translations_service.dart';
 import '../../../../shared/features/translations/domain/repositories_imp/translations_repository_imp.dart';
 import '../../../../shared/features/translations/domain/usecases/get_translations_use_case.dart';
@@ -18,5 +17,5 @@ final appInitializerProvider =
       final homeRepositoryProvider = Provider(
         (ref) => GetTranslationsUseCase(ref.read(translationsRepoImp)),
       );
-      return AppInitializerViewModel(ref.read(homeRepositoryProvider),ref);
+      return AppInitializerViewModel(ref.read(homeRepositoryProvider), ref);
     });

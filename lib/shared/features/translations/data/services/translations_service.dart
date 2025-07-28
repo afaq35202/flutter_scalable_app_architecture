@@ -14,11 +14,12 @@ class TranslationsService {
 
   TranslationsService(this._client);
 
-  Future<ApiResponse<TranslationEntity>> getTranslations() async {
+  Future<ApiResponse<TranslationEntity>> getTranslations(String languageCode) async {
     try {
       final response = await _client.request<TranslationsModel>(
-        path: AppInitializerEndPoints.getTranslations,
+        path: AppInitializerEndPoints.getTranslations+languageCode,
         method: HttpMethod.get,
+        queryParameters: {"origin":"mobile"},
         parser: (json) => TranslationsModel.fromJson(json),
       );
       return response.map((model) => model.toEntity());
