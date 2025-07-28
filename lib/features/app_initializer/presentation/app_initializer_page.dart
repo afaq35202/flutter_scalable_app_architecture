@@ -2,7 +2,6 @@ import 'package:dobby/features/app_initializer/presentation/pages/app_initialize
 import 'package:dobby/shared/widgets/reusable_responsive.dart';
 import 'package:flutter/material.dart';
 
-import '../../../app/routing/routes.dart';
 
 class AppInitializerPage extends StatelessWidget {
   const AppInitializerPage({super.key});

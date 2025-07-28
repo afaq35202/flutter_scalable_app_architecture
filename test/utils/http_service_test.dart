@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dobby/core/services/api_client.dart';
 import 'package:dobby/core/services/dio_client.dart';
 import 'package:dobby/core/utils/http_utils/api_response.dart';
 import 'package:dobby/core/utils/http_utils/enum_methods.dart';

@@ -1,8 +1,6 @@
-import 'package:dobby/core/extensions/string_extensions.dart';
 import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:dobby/shared/widgets/scaffold/export_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 

@@ -2,7 +2,6 @@ import 'package:dobby/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../shared/widgets/scaffold/export_scaffold.dart';
-import '../viewmodel/home_viewmodel.dart';
 
 class HomeMobile extends StatelessWidget {
 
