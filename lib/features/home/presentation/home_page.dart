@@ -1,5 +1,5 @@
-import 'package:yellowrock/features/home/presentation/pages/home_mobile.dart';
-import 'package:yellowrock/shared/widgets/reusable_responsive.dart';
+import 'package:dobby/features/home/presentation/pages/home_mobile.dart';
+import 'package:dobby/shared/widgets/reusable_responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/routing/routes.dart';

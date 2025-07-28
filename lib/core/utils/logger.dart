@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:yellowrock/core/utils/http_utils/api_response.dart';
+import 'package:dobby/core/utils/http_utils/api_response.dart';
 import 'package:flutter/foundation.dart';
 
 class Logger {

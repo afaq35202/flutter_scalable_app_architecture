@@ -1,4 +1,4 @@
-import 'package:yellowrock/core/provider/global_providers.dart';
+import 'package:dobby/core/provider/global_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../shared/features/translations/data/services/translations_service.dart';

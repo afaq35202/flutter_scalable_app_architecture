@@ -1,4 +1,4 @@
-import 'package:yellowrock/core/services/api_client.dart';
+import 'package:dobby/core/services/api_client.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../shared/features/translations/domain/entities/translation_entity.dart';

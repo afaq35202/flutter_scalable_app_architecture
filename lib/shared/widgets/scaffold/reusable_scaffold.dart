@@ -1,5 +1,5 @@
-import 'package:yellowrock/shared/widgets/scaffold/reusable_app_bar.dart';
-import 'package:yellowrock/shared/widgets/scaffold/reusable_body.dart';
+import 'package:dobby/shared/widgets/scaffold/reusable_app_bar.dart';
+import 'package:dobby/shared/widgets/scaffold/reusable_body.dart';
 import 'package:flutter/material.dart';
 
 // Do not import this file directly. Use `export_scaffold.dart` instead.

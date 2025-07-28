@@ -1,4 +1,4 @@
-import 'package:yellowrock/core/extensions/string_extensions.dart';
+import 'package:dobby/core/extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../shared/widgets/scaffold/export_scaffold.dart';

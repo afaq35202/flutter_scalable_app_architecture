@@ -1,4 +1,4 @@
-import 'package:yellowrock/app/env/app_environment.dart';
+import 'package:dobby/app/env/app_environment.dart';
 
 class Env {
   static bool _initialized = false;

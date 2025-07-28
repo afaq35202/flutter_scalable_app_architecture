@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:yellowrock/core/constants/assets.dart';
-import 'package:yellowrock/core/constants/http_constants.dart';
-import 'package:yellowrock/core/services/api_client.dart';
-import 'package:yellowrock/core/utils/http_utils/api_response.dart';
-import 'package:yellowrock/core/utils/http_utils/enum_methods.dart';
-import 'package:yellowrock/core/utils/logger.dart';
+import 'package:dobby/core/constants/assets.dart';
+import 'package:dobby/core/constants/http_constants.dart';
+import 'package:dobby/core/services/api_client.dart';
+import 'package:dobby/core/utils/http_utils/api_response.dart';
+import 'package:dobby/core/utils/http_utils/enum_methods.dart';
+import 'package:dobby/core/utils/logger.dart';
 import 'package:flutter/services.dart';
 
 class MockDioClient extends ApiClient {
