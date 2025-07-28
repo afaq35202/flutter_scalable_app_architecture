@@ -1,4 +1,4 @@
-import 'package:dobby/app/env/app_environment.dart';
+import 'package:yellowrock/app/env/app_environment.dart';
 
 abstract final class AppInitializerEndPoints {
   static String get getTranslations {

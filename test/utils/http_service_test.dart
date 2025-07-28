@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:dobby/core/services/dio_client.dart';
-import 'package:dobby/core/utils/http_utils/api_response.dart';
-import 'package:dobby/core/utils/http_utils/enum_methods.dart';
+import 'package:yellowrock/core/services/dio_client.dart';
+import 'package:yellowrock/core/utils/http_utils/api_response.dart';
+import 'package:yellowrock/core/utils/http_utils/enum_methods.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

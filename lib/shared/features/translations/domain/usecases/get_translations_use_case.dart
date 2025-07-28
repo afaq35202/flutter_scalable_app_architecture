@@ -1,4 +1,4 @@
-import 'package:dobby/core/utils/http_utils/api_response.dart';
+import 'package:yellowrock/core/utils/http_utils/api_response.dart';
 
 import '../../data/repositories/translations_reporitory.dart';
 import '../entities/translation_entity.dart';

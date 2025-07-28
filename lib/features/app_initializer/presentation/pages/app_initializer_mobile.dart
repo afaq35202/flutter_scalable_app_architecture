@@ -1,5 +1,5 @@
-import 'package:dobby/features/home/presentation/home_page.dart';
-import 'package:dobby/shared/widgets/scaffold/export_scaffold.dart';
+import 'package:yellowrock/features/home/presentation/home_page.dart';
+import 'package:yellowrock/shared/widgets/scaffold/export_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

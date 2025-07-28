@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:dobby/core/services/dio_client.dart';
-import 'package:dobby/core/utils/http_utils/api_response.dart';
-import 'package:dobby/core/utils/http_utils/enum_methods.dart';
-import 'package:dobby/shared/features/translations/data/repositories/translations_reporitory.dart';
-import 'package:dobby/shared/features/translations/data/services/translations_service.dart';
-import 'package:dobby/shared/features/translations/data/source/app_initializer_end_points.dart';
-import 'package:dobby/shared/features/translations/domain/repositories_imp/translations_repository_imp.dart';
-import 'package:dobby/shared/features/translations/domain/usecases/get_translations_use_case.dart';
+import 'package:yellowrock/core/services/dio_client.dart';
+import 'package:yellowrock/core/utils/http_utils/api_response.dart';
+import 'package:yellowrock/core/utils/http_utils/enum_methods.dart';
+import 'package:yellowrock/shared/features/translations/data/repositories/translations_reporitory.dart';
+import 'package:yellowrock/shared/features/translations/data/services/translations_service.dart';
+import 'package:yellowrock/shared/features/translations/data/source/app_initializer_end_points.dart';
+import 'package:yellowrock/shared/features/translations/domain/repositories_imp/translations_repository_imp.dart';
+import 'package:yellowrock/shared/features/translations/domain/usecases/get_translations_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -41,7 +41,7 @@ void main() {
 
       when(
         () => mockDio.request(
-          "https://uat.selecta.dobby.i${AppInitializerEndPoints.getTranslations}",
+          "https://uat.selecta.yellowrock.i${AppInitializerEndPoints.getTranslations}",
           data: any(named: 'data'),
           queryParameters: any(named: 'queryParameters'),
           options: any(named: 'options'),
@@ -49,7 +49,7 @@ void main() {
       ).thenAnswer((_) async => mockResponse);
 
       final result = await dioClient.request<Map<String, dynamic>>(
-        path:  "https://uat.selecta.dobby.i${AppInitializerEndPoints.getTranslations}",
+        path:  "https://uat.selecta.yellowrock.i${AppInitializerEndPoints.getTranslations}",
         method: HttpMethod.get,
         parser: (json) => json['message'] as Map<String, dynamic>,
         headers: {"origin":"mobile"}

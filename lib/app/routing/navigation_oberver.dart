@@ -1,4 +1,4 @@
-import 'package:dobby/core/utils/logger.dart';
+import 'package:yellowrock/core/utils/logger.dart';
 import 'package:flutter/cupertino.dart';
 
 class LoggingObserver extends NavigatorObserver {

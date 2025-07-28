@@ -1,6 +1,6 @@
-import 'package:dobby/app/routing/routes.dart';
-import 'package:dobby/features/app_initializer/presentation/app_initializer_page.dart';
-import 'package:dobby/features/home/presentation/home_page.dart';
+import 'package:yellowrock/app/routing/routes.dart';
+import 'package:yellowrock/features/app_initializer/presentation/app_initializer_page.dart';
+import 'package:yellowrock/features/home/presentation/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 

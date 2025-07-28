@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:dobby/app/env/environment.dart';
-import 'package:dobby/core/services/api_client.dart';
+import 'package:yellowrock/app/env/environment.dart';
+import 'package:yellowrock/core/services/api_client.dart';
 
 import '../utils/http_utils/api_response.dart';
 import '../utils/http_utils/enum_methods.dart';
