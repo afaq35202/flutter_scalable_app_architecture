@@ -13,13 +13,13 @@ class AppEnvironment {
   static List<Override> getEnvOverrides() {
     switch (currentEnv) {
       case EnvironmentMode.production:
-        return [dioClientProvider.overrideWithValue(DioClient())];
+        return [apiClientProvider.overrideWithValue(DioClient())];
       // case 'staging':
       //   currentEnv = EnvironmentMode.staging;
       //   break;
       // case 'dev':
       default:
-        return [dioClientProvider.overrideWithValue(MockDioClient()),];
+        return [apiClientProvider.overrideWithValue(MockDioClient()),];
     }
   }
 }

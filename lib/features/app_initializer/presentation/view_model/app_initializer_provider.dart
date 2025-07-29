@@ -7,7 +7,7 @@ import '../../../../shared/features/translations/domain/usecases/get_translation
 import 'app_initializer_view_model.dart';
 
 final _translationsService = Provider.autoDispose(
-  (ref) => TranslationsService(ref.read(dioClientProvider)),
+  (ref) => TranslationsService(ref.read(apiClientProvider)),
 );
 final _translationsRepoImp = Provider.autoDispose(
   (ref) => TranslationsRepositoryImp(ref.read(_translationsService)),
