@@ -1,17 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:dobby/app/env/environment.dart';
 import 'package:dobby/core/services/dio_client.dart';
 import 'package:dobby/core/utils/http_utils/api_response.dart';
-import 'package:dobby/core/utils/http_utils/enum_methods.dart';
 import 'package:dobby/shared/features/translations/data/repositories/translations_reporitory.dart';
 import 'package:dobby/shared/features/translations/data/services/translations_service.dart';
-import 'package:dobby/shared/features/translations/data/source/app_initializer_end_points.dart';
+import 'package:dobby/shared/features/translations/domain/entities/translation_entity.dart';
 import 'package:dobby/shared/features/translations/domain/repositories_imp/translations_repository_imp.dart';
 import 'package:dobby/shared/features/translations/domain/usecases/get_translations_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../../testing/mocks.dart';
+import '../../../../../testing/mocks.dart';
 
 void main() {
   late MockDio mockDio;
@@ -19,7 +17,10 @@ void main() {
   late TranslationsService translationsService;
   late TranslationsRepository translationsRepository;
   late GetTranslationsUseCase getTranslationsUseCase;
-
+  setUpAll(() {
+    registerFallbackValue(RequestOptions(path: ''));
+    registerFallbackValue(Options());
+  });
   setUp(() {
     mockDio = MockDio();
     dioClient = DioClient(dio: mockDio);
@@ -32,10 +33,6 @@ void main() {
       final mockData = {
         "message": {"info": "Info"},
       };
-      final mockParsed = {"info": "Info"};
-
-      const env = String.fromEnvironment('ENV', defaultValue: 'prod');
-      Env.initialize(customEnv: env);
 
       final mockResponse = ApiResponse.success(
         mockData,
@@ -45,22 +42,17 @@ void main() {
 
       when(
         () => mockDio.request(
-          "https://uat.selecta.dobby.i${AppInitializerEndPoints.getTranslations}",
+          any(),
           data: any(named: 'data'),
           queryParameters: any(named: 'queryParameters'),
           options: any(named: 'options'),
         ),
       ).thenAnswer((_) async => mockResponse);
 
-      final result = await dioClient.request<Map<String, dynamic>>(
-        path:  "https://uat.selecta.dobby.i${AppInitializerEndPoints.getTranslations}",
-        method: HttpMethod.get,
-        parser: (json) => json['message'] as Map<String, dynamic>,
-        headers: {"origin":"mobile"}
-      );
+      final result = await getTranslationsUseCase.call("en");
 
       expect(result.success, isTrue);
-      expect(result.data, equals(mockParsed));
+      expect(result.data, isA<TranslationEntity>());
       expect(result.statusCode, 200);
     });
 
@@ -79,11 +71,7 @@ void main() {
         ),
       );
 
-      final result = await dioClient.request<String>(
-        path: '/test',
-        method: HttpMethod.get,
-        parser: (_) => '',
-      );
+      final result = await getTranslationsUseCase.call("en");
 
       expect(result.success, isFalse);
       expect(result.message, isNotNull);
