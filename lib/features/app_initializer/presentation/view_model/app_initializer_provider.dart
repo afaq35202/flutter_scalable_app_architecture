@@ -6,16 +6,16 @@ import '../../../../shared/features/translations/domain/repositories_imp/transla
 import '../../../../shared/features/translations/domain/usecases/get_translations_use_case.dart';
 import 'app_initializer_view_model.dart';
 
-final _translationsService = Provider(
+final _translationsService = Provider.autoDispose(
   (ref) => TranslationsService(ref.read(dioClientProvider)),
 );
-final _translationsRepoImp = Provider(
+final _translationsRepoImp = Provider.autoDispose(
   (ref) => TranslationsRepositoryImp(ref.read(_translationsService)),
 );
-final _getTranslationsUseCase = Provider(
+final _getTranslationsUseCase = Provider.autoDispose(
   (ref) => GetTranslationsUseCase(ref.read(_translationsRepoImp)),
 );
 final appInitializerProvider =
-    StateNotifierProvider<AppInitializerViewModel, AsyncValue<void>>((ref) {
+    StateNotifierProvider.autoDispose<AppInitializerViewModel, AsyncValue<void>>((ref) {
       return AppInitializerViewModel(ref.read(_getTranslationsUseCase), ref);
     });
