@@ -5,11 +5,11 @@ class Env {
 
   static late final String baseUrl;
 
-  static void initialize() {
+  static void initialize({String? customEnv}) {
     if (_initialized) return;
     _initialized = true;
 
-    const env = String.fromEnvironment('ENV', defaultValue: 'dev');
+    final env = String.fromEnvironment('ENV', defaultValue: customEnv??'dev');
 
     switch (env) {
       case 'prod':

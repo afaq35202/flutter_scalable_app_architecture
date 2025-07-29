@@ -4,3 +4,4 @@ import 'package:mocktail/mocktail.dart';
 
 class MockDio extends Mock implements Dio {}
 class MockResponse extends Mock implements ApiResponse {}
+class MockInterceptors extends Mock implements Interceptors {}

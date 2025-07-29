@@ -4,6 +4,7 @@ import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/machines/presentation/machines_page.dart';
 import 'navigation_oberver.dart';
 
 final router = GoRouter(
@@ -16,7 +17,16 @@ final router = GoRouter(
       path: Routes.appInitializer,
       builder: (context, state) => const AppInitializerPage(),
     ),
-    GoRoute(path: Routes.home, builder: (context, state) => const HomePage()),
+    GoRoute(
+      path: Routes.home,
+      builder: (context, state) => const HomePage(),
+      routes: [
+        GoRoute(
+          path: Routes.machinesListingRelative,
+          builder: (context, state) => const MachinesPage(),
+        ),
+      ],
+    ),
   ],
 );
 

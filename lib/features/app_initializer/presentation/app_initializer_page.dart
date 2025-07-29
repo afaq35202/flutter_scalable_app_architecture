@@ -1,5 +1,5 @@
 import 'package:dobby/features/app_initializer/presentation/pages/app_initializer_mobile.dart';
-import 'package:dobby/shared/widgets/reusable_responsive.dart';
+import 'package:dobby/shared/widgets/layout/reusable_responsive.dart';
 import 'package:flutter/material.dart';
 
 

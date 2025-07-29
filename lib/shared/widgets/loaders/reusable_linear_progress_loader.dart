@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../app/theming/dimens/rounded_dimensions.dart';
+import '../../../app/theming/dimens/rounded_dimensions.dart';
 
 class ReusableLinearProgressLoader extends StatelessWidget {
   final double? width;

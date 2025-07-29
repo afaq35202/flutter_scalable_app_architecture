@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../shared/widgets/reusable_linear_progress_loader.dart';
+import '../../../../shared/widgets/loaders/reusable_linear_progress_loader.dart';
 import '../view_model/app_initializer_provider.dart';
 
 class AppInitializerMobile extends ConsumerStatefulWidget {

@@ -15,7 +15,7 @@ class DioClient extends ApiClient {
   DioClient({Dio? dio})
     : _dio =
           dio ??
-                Dio(
+                (Dio(
                   BaseOptions(
                     baseUrl: Env.baseUrl,
                     connectTimeout: const Duration(seconds: 10),
@@ -40,7 +40,7 @@ class DioClient extends ApiClient {
                   return handler.next(err);
                 },
               ),
-            );
+            ));
 
   @override
   Future<ApiResponse<T>> request<T>({
