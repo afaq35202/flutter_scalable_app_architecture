@@ -17,4 +17,7 @@ Generic project to presenting demo to clients
 Translations are fetching from remote and updating app translations
 
 
+for more info visit to [docs](/docs) folder
+
+
 
