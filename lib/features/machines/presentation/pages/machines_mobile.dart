@@ -13,6 +13,7 @@ class MachinesMobile extends ConsumerWidget {
       body: ReusableBody(
         child: Column(
           children: [
+            Text("Machines Screen")
           ],
         ),
       ),

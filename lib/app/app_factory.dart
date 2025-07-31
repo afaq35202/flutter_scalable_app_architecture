@@ -17,7 +17,7 @@ class AppFactory {
   }
 
   void _initEnvironment() {
-    Env.initialize();
+    EnvManager.initialize();
   }
 
   void initializeApp(BuildContext context) {

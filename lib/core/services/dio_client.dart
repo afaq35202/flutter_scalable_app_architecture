@@ -17,7 +17,7 @@ class DioClient extends ApiClient {
           dio ??
                 (Dio(
                   BaseOptions(
-                    baseUrl: Env.baseUrl,
+                    baseUrl: EnvManager.baseUrl,
                     connectTimeout: const Duration(seconds: 10),
                   ),
                 )

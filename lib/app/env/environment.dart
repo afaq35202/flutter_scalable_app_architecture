@@ -1,6 +1,6 @@
 import 'package:dobby/app/env/app_environment.dart';
 
-class Env {
+class EnvManager {
   static bool _initialized = false;
 
   static late final String baseUrl;
