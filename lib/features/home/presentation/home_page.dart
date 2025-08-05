@@ -1,5 +1,5 @@
 import 'package:dobby/features/home/presentation/pages/home_mobile.dart';
-import 'package:dobby/features/home/presentation/widgets/roles_based_sections/sections_home_exports.dart';
+import 'package:dobby/features/home/presentation/sections/home/home_factory.dart';
 import 'package:dobby/shared/widgets/layout/reusable_responsive.dart';
 import 'package:flutter/material.dart';
 
@@ -13,9 +13,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ReusableResponsive(
-      mobile: HomeMobile(sectionHome: SectionSupervisorHome()),
-      tablet: HomeMobile(sectionHome: SectionSupervisorHome()),
-      desktop: HomeMobile(sectionHome: SectionSupervisorHome()),
+      mobile: HomeMobile(sectionHome: getHomeSection.build(context)),
+      tablet: HomeMobile(sectionHome: getHomeSection.build(context)),
+      desktop: HomeMobile(sectionHome: getHomeSection.build(context)),
     );
   }
 }

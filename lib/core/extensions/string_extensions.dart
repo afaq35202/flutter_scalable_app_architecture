@@ -1,4 +1,3 @@
-import '../../app/app_factory.dart';
 import '../provider/global_providers.dart';
 
 extension StringExtensions on String? {
@@ -11,8 +10,8 @@ extension StringExtensions on String? {
   }
 
   String get tr {
-    final translations = AppFactory.instance.globalProviderContainer.read(
-      remoteTranslationsProvider,
+    final translations = GlobalProviders.instance.read(
+      GlobalProviders.remoteTranslationsProvider,
     );
     return translations.data?[this] ?? this ?? '';
   }

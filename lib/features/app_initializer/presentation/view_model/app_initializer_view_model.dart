@@ -28,14 +28,12 @@ class AppInitializerViewModel extends StateNotifier<AsyncValue<void>> {
     try {
       final response = await getTranslationsUseCase.call("en");
       if (response.success) {
-        ref.read(remoteTranslationsProvider.notifier).state =
+        ref.read(GlobalProviders.remoteTranslationsProvider.notifier).state =
             response.data ?? TranslationEntity.initial();
       }else{
         throw Exception();
       }
 
-    } catch (e) {
-
-    }
+    } catch (e) {}
   }
 }

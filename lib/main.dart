@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app/app_factory.dart';
+import 'app/app_initializer.dart';
 import 'app/routing/router.dart';
 import 'app/theming/theme/theming.dart';
 import 'l10n/app_localizations.dart';
@@ -15,7 +15,7 @@ import 'main_development.dart' as development;
 /// Default main method
 void main() {
   // Launch development config by default
-  AppFactory.instance.initializeProject();
+  AppInitializer.instance.initializeProject();
   development.main();
 }
 
@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppFactory.instance.initializeApp(context);
+    AppInitializer.instance.initializeApp(context);
     return MaterialApp.router(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

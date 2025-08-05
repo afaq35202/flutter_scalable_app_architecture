@@ -1,16 +1,15 @@
+import 'package:dobby/core/provider/global_providers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app/env/environment.dart';
 
-class AppFactory {
-  late ProviderContainer globalProviderContainer;
-
+class AppInitializer {
   // Private named constructor
-  AppFactory._internal();
+  AppInitializer._internal();
 
   // The single instance of AppFactory
-  static final AppFactory instance = AppFactory._internal();
+  static final AppInitializer instance = AppInitializer._internal();
 
   void initializeProject() {
     _initEnvironment();
@@ -21,10 +20,8 @@ class AppFactory {
   }
 
   void initializeApp(BuildContext context) {
-    _initGlobalProvider(context);
-  }
-
-  void _initGlobalProvider(BuildContext context) {
-    globalProviderContainer = ProviderScope.containerOf(context, listen: false);
+    GlobalProviders.instance.setContainer(
+      ProviderScope.containerOf(context, listen: false),
+    );
   }
 }
