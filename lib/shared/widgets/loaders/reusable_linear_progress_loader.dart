@@ -15,7 +15,7 @@ class ReusableLinearProgressLoader extends StatelessWidget {
       height: height,
       child: LinearProgressIndicator(
         borderRadius: BorderRadius.circular(
-          DimensionsRounded.smallWidgetsRoundness,
+          DimensionsRounded.smallRoundness,
         ),
       ),
     );

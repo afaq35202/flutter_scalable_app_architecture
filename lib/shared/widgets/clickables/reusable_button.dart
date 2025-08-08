@@ -14,6 +14,9 @@ class ReusableButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: onPressed, child: child ?? Text(text??''));
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: child ?? Text(text ?? ''),
+    );
   }
 }

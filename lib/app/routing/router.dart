@@ -1,5 +1,7 @@
 import 'package:dobby/app/routing/routes.dart';
 import 'package:dobby/features/app_initializer/presentation/app_initializer_page.dart';
+import 'package:dobby/features/authentication/presentation/forget_password/forget_password_page.dart';
+import 'package:dobby/features/authentication/presentation/login/login_page.dart';
 import 'package:dobby/features/home/presentation/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +18,16 @@ final router = GoRouter(
     GoRoute(
       path: Routes.appInitializer,
       builder: (context, state) => const AppInitializerPage(),
+    ),
+    GoRoute(
+      path: Routes.login,
+      builder: (context, state) => const LoginPage(),
+      routes: [
+        GoRoute(
+          path: Routes.forgetPasswordRelative,
+          builder: (context, state) => const ForgetPasswordPage(),
+        ),
+      ],
     ),
     GoRoute(
       path: Routes.home,

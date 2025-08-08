@@ -6,11 +6,21 @@ import 'package:flutter/material.dart';
 class ReusableScaffold extends StatelessWidget {
   final ReusableAppBar? appBar;
   final ReusableBody? body;
+  final Widget? bottomNavigationBar;
 
-  const ReusableScaffold({super.key, this.appBar, this.body});
+  const ReusableScaffold({
+    super.key,
+    this.appBar,
+    this.body,
+    this.bottomNavigationBar,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appBar, body: body);
+    return Scaffold(
+      appBar: appBar,
+      body: body,
+      bottomNavigationBar: bottomNavigationBar,
+    );
   }
 }
