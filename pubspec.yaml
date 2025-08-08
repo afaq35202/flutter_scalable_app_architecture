@@ -48,6 +48,9 @@ dependencies:
   #apis calling
   dio: ^5.8.0+1
 
+  #render svgs
+  flutter_svg: ^2.2.0
+
 
 dev_dependencies:
   flutter_test:
