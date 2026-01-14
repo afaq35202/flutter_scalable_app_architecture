@@ -40,3 +40,26 @@ Before adding a new API:
 ## 🌍 Remote Translations
 
 Translations are fetched from the server using the shared Translations API.
+
+## 🔄 MVVM with Riverpod
+
+Each feature follows MVVM:
+
+- **View (Pages / Widgets)**  
+  Platform-specific UI (mobile / tablet / desktop)
+
+- **ViewModel**
+  Handles UI logic, state, and business rules
+
+- **Provider**
+  Riverpod providers for dependency injection & lifecycle management
+
+
+## 📱 Multi-Platform UI Support
+
+This project supports:
+- Mobile
+- Tablet
+- Desktop
+
+Each platform has its own UI implementation while sharing the same ViewModel and business logic.
